@@ -4,3 +4,4 @@ export const motionStyles = {
   exit: { y: 40, opacity: 0 },
   transition: { duration: 0.5 },
 };
+

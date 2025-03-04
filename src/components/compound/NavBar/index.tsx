@@ -20,8 +20,8 @@ const NavBarCompound = ({ children, content }: INavBarProps) => {
             alt="logo-carpas"
             loading="lazy"
             quality={100}
-            width={200}
-            height={100}
+            width={170}
+            height={70}
             style={{ objectFit: "cover" }}
             priority={false}
           />
