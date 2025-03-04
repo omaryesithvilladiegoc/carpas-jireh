@@ -16,7 +16,7 @@ const NavBarCompound = ({ children, content }: INavBarProps) => {
       <div className={styles.navBar}>
         <div className={styles.contentLogo}>
           <Image
-            src={"/assets/IMG_8068.PNG"}
+            src={"/assets/logo-main.png"}
             alt="logo-carpas"
             loading="lazy"
             quality={100}
