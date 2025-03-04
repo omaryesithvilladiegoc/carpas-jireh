@@ -12,6 +12,12 @@ const Header = () => {
     "/assets/carpa2.jpeg",
     "/assets/carpa3.jpeg",
     "/assets/carpa4.jpeg",
+    "/assets/carpa5.jpeg",
+    "/assets/carpa6.jpeg",
+    "/assets/carpa7.jpeg",
+    "/assets/carpa8.jpeg",
+    "/assets/carpa9.jpeg",
+    "/assets/carpa10.jpeg",
   ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
