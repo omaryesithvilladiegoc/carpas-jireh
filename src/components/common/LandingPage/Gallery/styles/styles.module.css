@@ -17,14 +17,44 @@
    transition: all ease .5s;
 }
 
+.itemGallery {
+    position: relative;
+    overflow: hidden;
+    pointer-events: auto; 
+}
+
+.itemGallery img {
+    transition: all ease .5s;
+    pointer-events: auto;
+}
+
 .itemGallery img:hover {
     scale: 1.1;
+   
+    
 }
 
 .backgruoundFilter {
-    background-color: rgba(79, 66, 12, 0.741); 
+    background-color: rgba(21, 30, 22, 0.63); 
     position: absolute;
-    width: 50rem;
-    height: 25rem;
+    width: 100%;
+    height: 27rem;
     overflow: hidden;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; 
+    color: aliceblue;
+}
+
+.backgruoundFilter p {
+    width: 80%;
+    font-size: 1.1rem;
+    text-align: center;
+}
+.backgruoundFilter h2 {
+    font-size: 4rem;
+    color: white;
 }

@@ -4,9 +4,15 @@ const Gallery = () => {
   return (
     <div className={styles.gallery}>
       <section className={styles.itemGallery}>
-        <div className={styles.backgruoundFilter}></div>
+        <div className={styles.backgruoundFilter}>
+          <h2>Tipo Hangar</h2>
+          <p>
+            Se utilizan comúnmente en almacenamiento, logística, eventos masivos
+            y hangares temporales para aeronaves o maquinaria pesada.
+          </p>
+        </div>
         <Image
-          src={"/assets/WhatsApp Image 2025-03-03 at 3.22.12 PM (5).jpeg"}
+          src={"/assets/gallery8.jpeg"}
           loading="lazy"
           alt="Carpa en la naturaleza"
           fill
@@ -16,8 +22,16 @@ const Gallery = () => {
         />
       </section>
       <section className={styles.itemGallery}>
+        <div className={styles.backgruoundFilter}>
+          <h2>Tipo Kiosco</h2>
+          <p>
+            Se emplean comúnmente para stands comerciales, ferias, mercados y
+            puntos de venta temporales. Son fáciles de montar y desmontar,
+            permitiendo una gran versatilidad en su uso.
+          </p>
+        </div>
         <Image
-          src={"/assets/WhatsApp Image 2025-03-03 at 3.22.12 PM (6).jpeg"}
+          src={"/assets/gallery2.jpeg"}
           loading="lazy"
           alt="Carpa en la naturaleza"
           fill
@@ -27,8 +41,12 @@ const Gallery = () => {
         />
       </section>
       <section className={styles.itemGallery}>
+        <div className={styles.backgruoundFilter}>
+          <h2>Tipo Pagoda</h2>
+          <p>Se usan en eventos, ferias, bodas y recepciones al aire libre.</p>
+        </div>
         <Image
-          src={"/assets/WhatsApp Image 2025-03-03 at 3.22.12 PM (7).jpeg"}
+          src={"/assets/gallery7.jpeg"}
           loading="lazy"
           alt="Carpa en la naturaleza"
           fill
@@ -38,8 +56,16 @@ const Gallery = () => {
         />
       </section>
       <section className={styles.itemGallery}>
+        <div className={styles.backgruoundFilter}>
+          <h2>Tipo Membrana</h2>
+          <p>
+            Se usan en espacios urbanos, parques, áreas recreativas y eventos al
+            aire libre, combinando funcionalidad con un diseño estético
+            innovador.
+          </p>
+        </div>
         <Image
-          src={"/assets/carpa1.png"}
+          src={"/assets/gallery6.jpeg"}
           loading="lazy"
           alt="Carpa en la naturaleza"
           fill

@@ -4,20 +4,22 @@ import styles from "./styles/styles.module.css";
 import { motion } from "motion/react";
 import { motionStyles, sliderStyles } from "@/app/motion-animations";
 import { useState, useEffect } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaWhatsapp } from "react-icons/fa";
+import { lato, roboto } from "@/fonts/index.fonts";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 const Header = () => {
   const images = [
-    "/assets/carpa1.png",
-    "/assets/carpa2.jpeg",
-    "/assets/carpa3.jpeg",
-    "/assets/carpa4.jpeg",
-    "/assets/carpa5.jpeg",
-    "/assets/carpa6.jpeg",
-    "/assets/carpa7.jpeg",
-    "/assets/carpa8.jpeg",
-    "/assets/carpa9.jpeg",
-    "/assets/carpa10.jpeg",
+    ["/assets/carpa1.png", "Eventos Coorporativos"],
+    ["/assets/carpa2.jpeg", "Bodas y Celebraciones"],
+    ["/assets/carpa3.jpeg", "Ferias y Exposiciones"],
+    ["/assets/carpa4.jpeg", "Construcción e Industria"],
+    ["/assets/carpa5.jpeg", "Eventos Corporativos"],
+    ["/assets/carpa6.jpeg", "Bodas y Celebraciones"],
+    ["/assets/carpa7.jpeg", "Ferias y Exposiciones"],
+    ["/assets/carpa8.jpeg", "Construcción e Industria"],
+    ["/assets/carpa9.jpeg", "Eventos Corporativos"],
+    ["/assets/carpa10.jpeg", "Bodas y Celebraciones"],
   ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -35,6 +37,8 @@ const Header = () => {
     nextImage();
   };
 
+  const handleHoverButton = () => {};
+
   useEffect(() => {
     const interval = setInterval(nextImage, 3500);
     return () => clearInterval(interval);
@@ -42,19 +46,41 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <section className={styles.headerText}>
-        <motion.h1 {...motionStyles}>
-          Encuentra la carpa ideal para cada ocasión
-        </motion.h1>
+      <section className={`${styles.headerText} ${roboto.className}`}>
+        <div className={styles.headerContentText}>
+          <motion.h1 {...motionStyles}>
+            Encuentra la carpa ideal para cada ocasión
+          </motion.h1>
+          <span>
+            {" "}
+            <FaMapMarkerAlt />
+            {"Colombia "}
+          </span>
+          <motion.a href="tel:+573001234567" className={styles.phoneLink}>
+            Llama ahora: +57 300 123 4567
+          </motion.a>
+        </div>
       </section>
-      <section className={styles.headerImage} onTouchMove={handleMove}>
+      <section
+        className={`${styles.headerImage} ${lato.className}`}
+        onTouchMove={handleMove}
+      >
         <motion.div
           key={currentImageIndex}
           {...sliderStyles}
           style={{ position: "relative", width: "100%", height: "100%" }}
         >
+          <div className={styles.bgText}>
+            <h2>{images[currentImageIndex][1]}</h2>
+            <p>Contamos con más de 15 años de experiencia</p>
+            <button onMouseEnter={handleHoverButton}>
+              <FaWhatsapp className={styles.wpIcon} />
+              <span className={styles.backgroundButton}></span>
+              Solicita una cotización
+            </button>
+          </div>
           <Image
-            src={images[currentImageIndex]}
+            src={images[currentImageIndex][0]}
             loading="lazy"
             alt="Carpa en la naturaleza"
             fill

@@ -9,10 +9,12 @@ import { FaPhoneAlt } from "react-icons/fa";
 
 import styles from "./styles/navbar.module.css";
 import { RiHome2Fill } from "react-icons/ri";
+import { useState } from "react";
 
 const NavBarCompound = ({ children, content }: INavBarProps) => {
+  const [isOpen] = useState<boolean>(false);
   return (
-    <NavBarContext.Provider value={{ content }}>
+    <NavBarContext.Provider value={{ content, isOpen }}>
       <div className={styles.navBar}>
         <div className={styles.contentLogo}>
           <Image
@@ -20,8 +22,8 @@ const NavBarCompound = ({ children, content }: INavBarProps) => {
             alt="logo-carpas"
             loading="lazy"
             quality={100}
-            width={170}
-            height={70}
+            width={180}
+            height={80}
             style={{ objectFit: "cover" }}
             priority={false}
           />
@@ -86,7 +88,7 @@ NavBarCompound.ButtonHome = function ButtonHome() {
 NavBarCompound.ButtonOpenMenu = function ButtonOpenMenu() {
   return (
     <li>
-      <TiThMenu />{" "}
+      <TiThMenu fontSize={"2rem"} />{" "}
     </li>
   );
 };
