@@ -47,7 +47,7 @@ const Header = () => {
           Encuentra la carpa ideal para cada ocasión
         </motion.h1>
       </section>
-      <section className={styles.headerImage} onDrag={handleMove}>
+      <section className={styles.headerImage} onTouchMove={handleMove}>
         <motion.div
           key={currentImageIndex}
           {...sliderStyles}
