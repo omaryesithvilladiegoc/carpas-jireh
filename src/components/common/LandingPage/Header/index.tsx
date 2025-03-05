@@ -7,7 +7,18 @@ import { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Header = () => {
-  const images = ["/assets/carpa1.png", "/assets/carpa2.jpeg"];
+  const images = [
+    "/assets/carpa1.png",
+    "/assets/carpa2.jpeg",
+    "/assets/carpa3.jpeg",
+    "/assets/carpa4.jpeg",
+    "/assets/carpa5.jpeg",
+    "/assets/carpa6.jpeg",
+    "/assets/carpa7.jpeg",
+    "/assets/carpa8.jpeg",
+    "/assets/carpa9.jpeg",
+    "/assets/carpa10.jpeg",
+  ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
@@ -18,6 +29,10 @@ const Header = () => {
     setCurrentImageIndex(
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
+  };
+
+  const handleMove = () => {
+    nextImage();
   };
 
   useEffect(() => {
@@ -32,7 +47,7 @@ const Header = () => {
           Encuentra la carpa ideal para cada ocasión
         </motion.h1>
       </section>
-      <section className={styles.headerImage}>
+      <section className={styles.headerImage} onDrag={handleMove}>
         <motion.div
           key={currentImageIndex}
           {...sliderStyles}
