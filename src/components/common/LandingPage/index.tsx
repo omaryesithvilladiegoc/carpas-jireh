@@ -3,6 +3,7 @@ import NavBarCompound from "@/components/compound/NavBar";
 import Header from "./Header";
 import { useMediaQuery } from "usehooks-ts";
 import Gallery from "./Gallery";
+import SectionOne from "./SectionInformation1";
 
 const LandingPage = () => {
   const smView = useMediaQuery("(min-width: 900px)", {
@@ -36,6 +37,7 @@ const LandingPage = () => {
         {smView && <NavBarCompound.ButtonAbout />}
       </NavBarCompound>
       <Gallery />
+      <SectionOne />
     </div>
   );
 };

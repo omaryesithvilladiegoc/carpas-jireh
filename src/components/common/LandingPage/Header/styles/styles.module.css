@@ -1,9 +1,25 @@
 .header {
     display: grid;
     height: 30rem;
-    grid-template-columns: 1fr 3fr;
-    background-attachment: fixed;
+    grid-template-columns: 1fr;
+    transition: all ease .5s;
 }
+
+.headerText {
+    display: none;
+     justify-content: center;
+     flex-direction: column;
+     transition: all ease .5s;
+ }
+ .openInfo {
+    display: flex;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.393);
+    height: 100%;
+    width: 1rem;
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: all ease .5s}
 
 @media (max-width: 800px) {
     .header {
@@ -11,13 +27,31 @@
         grid-template-rows: 12rem 30rem;
         height: 42rem;
     }
+    .headerText {
+        display: flex;
+    }
+    .openInfo {
+        display: none;
+    }
 }
-.headerText {
+
+
+.openInfo:hover {
+    transform: scale(1.2); /* Escala al hacer hover */
+    opacity: 0.8; /* Transparencia al hacer hover */
+}
+
+
+.headerActive {
+    grid-template-columns: 1fr 3fr;
+
+}
+.headerTextActive {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
 }
 .headerContentText {
+    display: flex;
+    flex-direction: column;
     width: 90%;
     margin: 0 auto;
 }
@@ -31,6 +65,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    transition: all ease .5s;
 }
 
 .carouselButton {
@@ -56,7 +91,7 @@
     position: absolute;
     width: 100%;
     height: 30rem;
-    background-color: rgba(0, 0, 0, 0.534);
+    background-color: rgba(0, 0, 0, 0.449);
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -86,7 +121,7 @@
 }
 
 
-.bgText button {
+.bgText .buttonWp {
     background-color: #eccb54c5;
     border: none;
     padding: .7rem;
@@ -106,13 +141,13 @@
     transition: all 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease; /* Transiciones para el efecto */
 }
 
-.bgText button:active {
+.bgText .buttonWp:active {
     transform: scale(1.05); /* Efecto al presionar en dispositivos móviles */
     background-color: #f0d25b; 
     box-shadow: 0 8px 20px rgba(255, 203, 84, 0.7); 
 }
 
-.bgText button:hover {
+.bgText .buttonWp:hover {
     transform: scale(1.05); /* Efecto al presionar en dispositivos móviles */
     background-color: #f0d25b; 
     box-shadow: 0 8px 20px rgba(255, 203, 84, 0.7); 
@@ -160,4 +195,8 @@
         color: aliceblue;
         font-size: 1rem; 
     }
+}
+.phoneLink {
+    color: black;
+    text-decoration: none;
 }

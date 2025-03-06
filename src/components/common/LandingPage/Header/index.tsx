@@ -3,10 +3,13 @@ import Image from "next/image";
 import styles from "./styles/styles.module.css";
 import { motion } from "motion/react";
 import { motionStyles, sliderStyles } from "@/app/motion-animations";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaChevronLeft, FaChevronRight, FaWhatsapp } from "react-icons/fa";
 import { lato, roboto } from "@/fonts/index.fonts";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { BiPhoneCall } from "react-icons/bi";
+import { BsMailbox } from "react-icons/bs";
+import { useMediaQuery } from "usehooks-ts";
 
 const Header = () => {
   const images = [
@@ -22,6 +25,27 @@ const Header = () => {
     ["/assets/carpa10.jpeg", "Bodas y Celebraciones"],
   ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const isMediumView = useMediaQuery("(min-width: 800px)", {
+    initializeWithValue: false,
+  });
+  const headerRef = useRef<HTMLElement>(null);
+  const HeaderTextRef = useRef<HTMLElement>(null);
+
+  const handleOpenHeaderText = () => {
+    const header = headerRef.current;
+    const headerText = HeaderTextRef.current;
+    if (header) header.style.gridTemplateColumns = "1fr 3fr";
+
+    if (headerText) headerText.style.display = "flex";
+  };
+
+  const handleCloseHeaderText = () => {
+    const header = headerRef.current;
+    const headerText = HeaderTextRef.current;
+    if (header) header.style.gridTemplateColumns = "1fr";
+
+    if (headerText) headerText.style.display = "none";
+  };
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -45,25 +69,44 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={styles.header}>
-      <section className={`${styles.headerText} ${roboto.className}`}>
+    <header ref={headerRef} className={styles.header}>
+      <section
+        onMouseOver={isMediumView ? handleOpenHeaderText : undefined}
+        ref={HeaderTextRef}
+        className={`${styles.headerText} ${roboto.className}`}
+      >
         <div className={styles.headerContentText}>
           <motion.h1 {...motionStyles}>
             Encuentra la carpa ideal para cada ocasión
           </motion.h1>
-          <span>
+          <motion.span {...motionStyles}>
             {" "}
             <FaMapMarkerAlt />
             {"Colombia "}
-          </span>
-          <motion.a href="tel:+573001234567" className={styles.phoneLink}>
+          </motion.span>
+
+          <motion.a
+            href="tel:+573001234567"
+            {...motionStyles}
+            className={styles.phoneLink}
+          >
+            <BiPhoneCall />
             Llama ahora: +57 300 123 4567
+          </motion.a>
+          <motion.a
+            href="mailto:info@ejemplo.com"
+            {...motionStyles}
+            className={styles.phoneLink}
+          >
+            <BsMailbox />
+            Envíanos un correo: info@ejemplo.com
           </motion.a>
         </div>
       </section>
       <section
         className={`${styles.headerImage} ${lato.className}`}
         onTouchMove={handleMove}
+        onMouseEnter={isMediumView ? handleCloseHeaderText : undefined}
       >
         <motion.div
           key={currentImageIndex}
@@ -71,9 +114,16 @@ const Header = () => {
           style={{ position: "relative", width: "100%", height: "100%" }}
         >
           <div className={styles.bgText}>
+            <button
+              className={styles.openInfo}
+              onMouseEnter={isMediumView ? handleOpenHeaderText : undefined}
+            ></button>
             <h2>{images[currentImageIndex][1]}</h2>
             <p>Contamos con más de 15 años de experiencia</p>
-            <button onMouseEnter={handleHoverButton}>
+            <button
+              className={styles.buttonWp}
+              onMouseEnter={handleHoverButton}
+            >
               <FaWhatsapp className={styles.wpIcon} />
               <span className={styles.backgroundButton}></span>
               Solicita una cotización

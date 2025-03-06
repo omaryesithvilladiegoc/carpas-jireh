@@ -47,6 +47,7 @@
     align-items: center;
     pointer-events: none; 
     color: aliceblue;
+    text-align: center;
 }
 
 .backgruoundFilter p {
