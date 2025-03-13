@@ -10,5 +10,5 @@ export const lato = Lato({
 export const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin"],
-  weight: "800",
+  weight: "400",
 });

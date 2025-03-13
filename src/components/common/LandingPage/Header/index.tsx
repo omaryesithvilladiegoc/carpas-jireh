@@ -2,50 +2,34 @@
 import Image from "next/image";
 import styles from "./styles/styles.module.css";
 import { motion } from "motion/react";
-import { motionStyles, sliderStyles } from "@/app/motion-animations";
-import { useState, useEffect, useRef } from "react";
-import { FaChevronLeft, FaChevronRight, FaWhatsapp } from "react-icons/fa";
-import { lato, roboto } from "@/fonts/index.fonts";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { BiPhoneCall } from "react-icons/bi";
-import { BsMailbox } from "react-icons/bs";
-import { useMediaQuery } from "usehooks-ts";
+import { sliderStyles } from "@/app/motion-animations";
+import { useState, useEffect } from "react";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaEnvelope,
+  FaPhone,
+  FaWhatsapp,
+} from "react-icons/fa";
+import { lato } from "@/fonts/index.fonts";
 
 const Header = () => {
   const images = [
-    ["/assets/carpa1.png", "Eventos Coorporativos"],
+    ["/assets/carpa1.png", "Bodas y Celebraciones"],
     ["/assets/carpa2.jpeg", "Bodas y Celebraciones"],
-    ["/assets/carpa3.jpeg", "Ferias y Exposiciones"],
-    ["/assets/carpa4.jpeg", "Construcción e Industria"],
-    ["/assets/carpa5.jpeg", "Eventos Corporativos"],
+    ["/assets/carpa3.jpeg", "Bodas y Celebraciones"],
+    ["/assets/carpa4.jpeg", "Bodas y Celebraciones"],
+    ["/assets/carpa5.jpeg", "Bodas y Celebraciones"],
     ["/assets/carpa6.jpeg", "Bodas y Celebraciones"],
     ["/assets/carpa7.jpeg", "Ferias y Exposiciones"],
     ["/assets/carpa8.jpeg", "Construcción e Industria"],
     ["/assets/carpa9.jpeg", "Eventos Corporativos"],
     ["/assets/carpa10.jpeg", "Bodas y Celebraciones"],
+    ["/assets/carpa11.jpeg", "Bodas y Celebraciones"],
+    ["/assets/carpa12.jpeg", "Bodas y Celebraciones"],
+    ["/assets/carpa13.jpeg", "Bodas y Celebraciones"],
   ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const isMediumView = useMediaQuery("(min-width: 800px)", {
-    initializeWithValue: false,
-  });
-  const headerRef = useRef<HTMLElement>(null);
-  const HeaderTextRef = useRef<HTMLElement>(null);
-
-  const handleOpenHeaderText = () => {
-    const header = headerRef.current;
-    const headerText = HeaderTextRef.current;
-    if (header) header.style.gridTemplateColumns = "1fr 3fr";
-
-    if (headerText) headerText.style.display = "flex";
-  };
-
-  const handleCloseHeaderText = () => {
-    const header = headerRef.current;
-    const headerText = HeaderTextRef.current;
-    if (header) header.style.gridTemplateColumns = "1fr";
-
-    if (headerText) headerText.style.display = "none";
-  };
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -69,66 +53,63 @@ const Header = () => {
   }, []);
 
   return (
-    <header ref={headerRef} className={styles.header}>
-      <section
-        onMouseOver={isMediumView ? handleOpenHeaderText : undefined}
-        ref={HeaderTextRef}
-        className={`${styles.headerText} ${roboto.className}`}
-      >
-        <div className={styles.headerContentText}>
-          <motion.h1 {...motionStyles}>
-            Encuentra la carpa ideal para cada ocasión
-          </motion.h1>
-          <motion.span {...motionStyles}>
-            {" "}
-            <FaMapMarkerAlt />
-            {"Colombia "}
-          </motion.span>
-
-          <motion.a
-            href="tel:+573001234567"
-            {...motionStyles}
-            className={styles.phoneLink}
-          >
-            <BiPhoneCall />
-            Llama ahora: +57 300 123 4567
-          </motion.a>
-          <motion.a
-            href="mailto:info@ejemplo.com"
-            {...motionStyles}
-            className={styles.phoneLink}
-          >
-            <BsMailbox />
-            Envíanos un correo: info@ejemplo.com
-          </motion.a>
-        </div>
-      </section>
+    <header className={styles.header}>
       <section
         className={`${styles.headerImage} ${lato.className}`}
         onTouchMove={handleMove}
-        onMouseEnter={isMediumView ? handleCloseHeaderText : undefined}
       >
         <motion.div
           key={currentImageIndex}
-          {...sliderStyles}
           style={{ position: "relative", width: "100%", height: "100%" }}
         >
-          <div className={styles.bgText}>
-            <button
-              className={styles.openInfo}
-              onMouseEnter={isMediumView ? handleOpenHeaderText : undefined}
-            ></button>
-            <h2>{images[currentImageIndex][1]}</h2>
-            <p>Contamos con más de 15 años de experiencia</p>
-            <button
-              className={styles.buttonWp}
-              onMouseEnter={handleHoverButton}
-            >
-              <FaWhatsapp className={styles.wpIcon} />
-              <span className={styles.backgroundButton}></span>
-              Solicita una cotización
-            </button>
-          </div>
+          <motion.div className={styles.bgText}>
+            <div className={styles.contactInfo}>
+              <div className={styles.wraperContactInfo}>
+                <Image
+                  src={"/assets/Vector.png"}
+                  alt="logo-carpas"
+                  loading="lazy"
+                  quality={100}
+                  width={150}
+                  height={90}
+                  priority={false}
+                />
+                <p>Carpas Para todo tipo de evento</p>
+              </div>
+            </div>
+            <div className={styles.contentText}>
+              {" "}
+              <motion.h2 {...sliderStyles}>
+                {images[currentImageIndex][1]}
+              </motion.h2>
+              <motion.p {...sliderStyles}>
+                Contamos con más de 15 años de experiencia
+              </motion.p>
+              <motion.button
+                {...sliderStyles}
+                className={styles.buttonWp}
+                onMouseEnter={handleHoverButton}
+              >
+                <FaWhatsapp className={styles.wpIcon} />
+                <span className={styles.backgroundButton}>
+                  {" "}
+                  Solicita una cotización
+                </span>
+              </motion.button>
+            </div>
+            <div className={styles.footerBgText}>
+              <div className={styles.buttonCallAction}>
+                <a href="tel:+1234567890" className={styles.buttonWp}>
+                  <FaPhone className={styles.icon} />
+                  <span className={styles.tooltip}>1234567890</span>
+                </a>
+                <a href="mailto:info@ejemplo.com" className={styles.buttonWp}>
+                  <FaEnvelope className={styles.icon} />
+                  <span className={styles.tooltip}>info@ejemplo.com</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
           <Image
             src={images[currentImageIndex][0]}
             loading="lazy"
