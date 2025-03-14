@@ -28,10 +28,8 @@ const LandingPage = () => {
         content={{
           ButtonProducts: "Nuestras Carpas",
           ButtonAbout: "Sobre Nosotros",
-          ButtonHome: "Inicio",
         }}
       >
-        {smView && <NavBarCompound.ButtonHome />}
         {xsView && <NavBarCompound.ButtonProducts />}
         {!smView && <NavBarCompound.ButtonOpenMenu />}
         {smView && <NavBarCompound.ButtonAbout />}

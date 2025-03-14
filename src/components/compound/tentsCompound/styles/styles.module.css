@@ -1,0 +1,195 @@
+
+
+/* Grid Tecnology */
+.tentGrid {
+    width: 100%;
+    position: absolute;
+    top: 80;
+    display: grid;
+    margin: 0 auto;
+    gap: 1rem;
+    grid-auto-rows: 30rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem),1fr));
+    
+}
+
+/* Card Tecnology */
+
+.tentCard {
+    display: flex;
+    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 1.5rem;
+    justify-content: space-around;
+    height: fit-content;
+    transition: all ease .2s;
+    
+}
+
+.tentCard:hover {
+    scale: 1.05;
+}
+.tentCard h4 {
+   
+    z-index: 1;
+    color: #beddff;
+   
+}
+
+
+
+.tentCard p {
+    width: 100%;
+}
+
+
+
+.contentCardTent {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 3px solid #e9ecef;
+    overflow: hidden;
+    border-radius: 15px;
+    margin: 0 auto;
+    
+}
+
+.contentCardTent button {
+    display: flex;
+    border: none;
+    justify-content: center;
+    background-color: #667182;
+    color: white;
+    height: 2.5rem;
+    align-items: center;
+    cursor: pointer;
+    transition: all ease .1s;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.contentCardTent button:hover {
+scale: 1.1;
+}
+
+.contentCardHeader {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    padding: .5rem;
+    margin: 0 auto;
+}
+
+.imageContainer {
+    display: flex;
+    height: 100%;
+}
+
+/* Form Search Tecnology */
+
+.formTents {
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    background-color: black;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.contentInputs {
+    display: flex;
+    width: 80%;
+}
+
+
+.inputTent {
+    color: #667182;
+    font-weight: bold;
+    background-color: #f8f9fa;
+    width: 30%;
+    border: 1px solid #e9ecef;
+    border-radius: 0 5px 5px 0;
+    transition: border-color 0.3s, transform 0.2s;
+}
+
+
+.inputTent:focus {
+    outline: none; /* Sin contorno por defecto */
+}
+.inputTent::placeholder {
+    font-size: 1rem; 
+    color: rgba(124, 138, 162, 0.7);
+     
+}
+
+.selectTent {
+    width: 20%;
+    padding: 0.5rem;
+    color: #667182;
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667182' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+@media (max-width:800px) {
+    .selectTent {
+        width: 35%;
+    }
+    .inputTent {
+        width: 50%;
+    }
+}
+
+.selectTent option {
+    padding: 1rem;
+    font-size: 1rem;
+    color: #667182;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.2s ease;
+}
+
+
+
+
+.noTentMessage {
+    display: flex;
+    height: 100%;
+    width: 90vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flexstart;
+    padding: 2rem;
+    border-radius: 8px;
+    color: #721c24;
+    font-size: 1.2rem;
+    text-align: center;
+} 
+
+.contentLogo {
+    position: relative;
+    z-index: 1;
+    
+}
+
+.sectionForm {
+    height: 100%;
+}
+
+.contentGrid {
+    height: 100vh;
+}

@@ -10,6 +10,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import styles from "./styles/navbar.module.css";
 import { RiHome2Fill } from "react-icons/ri";
 import { useState } from "react";
+import Link from "next/link";
 
 const NavBarCompound = ({ children, content }: INavBarProps) => {
   const [isOpen] = useState<boolean>(false);
@@ -28,7 +29,6 @@ const NavBarCompound = ({ children, content }: INavBarProps) => {
             priority={false}
           />
         </div>
-
         <ul>{children}</ul>
       </div>
     </NavBarContext.Provider>
@@ -39,12 +39,15 @@ NavBarCompound.ButtonProducts = function ButtonProducts() {
   const context = useNavBarContext();
   const { ButtonProducts } = context.content;
   return (
-    <li>
-      {ButtonProducts}{" "}
-      <span>
-        <GiBarracksTent />
-      </span>
-    </li>
+    <Link href={"/tents"}>
+      {" "}
+      <li>
+        {ButtonProducts}{" "}
+        <span>
+          <GiBarracksTent />
+        </span>
+      </li>
+    </Link>
   );
 };
 NavBarCompound.ButtonAbout = function ButtonAbout() {

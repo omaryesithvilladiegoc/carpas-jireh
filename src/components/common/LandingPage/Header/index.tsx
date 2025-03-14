@@ -4,6 +4,7 @@ import styles from "./styles/styles.module.css";
 import { motion } from "motion/react";
 import { sliderStyles } from "@/app/motion-animations";
 import { useState, useEffect } from "react";
+
 import {
   FaChevronLeft,
   FaChevronRight,
@@ -74,7 +75,8 @@ const Header = () => {
                   height={90}
                   priority={false}
                 />
-                <p>Carpas Para todo tipo de evento</p>
+
+                <p>Carpas Para todo tipo de evento </p>
               </div>
             </div>
             <div className={styles.contentText}>
