@@ -14,18 +14,11 @@ import "lightgallery/css/lg-thumbnail.css";
 
 const categorias = [
   "todas",
-  "carpas publicitarias",
-  "glamping",
-  "hangares y bodegas",
-  "membranas arquitectónicas",
-  "kioscos desarmables",
-  "kioscos plegables",
-  "parasol pétalo",
-  "parasoles de brazo lateral",
-  "sombrilla brazo lateral",
-  "parasoles de mesa",
-  "toldos fijos",
-  "toldos retráctiles",
+  "carpas dos aguas",
+  "carpas cuatro aguas",
+  "carpas pagodas",
+  "carpas hangares",
+  "carpas plegables",
 ];
 
 const FilterableTents = ({ tents, children }: Props) => {

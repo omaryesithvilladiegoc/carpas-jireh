@@ -2,8 +2,7 @@ import Image from "next/image";
 import styles from "./styles/styles.module.css";
 const Gallery = () => {
   return (
-    <div>
-      <div></div>
+    <div className={styles.wraperGallery}>
       <div className={styles.gallery}>
         <section className={styles.itemGallery}>
           <div className={styles.backgruoundFilter}>

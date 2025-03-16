@@ -4,6 +4,7 @@ import Header from "./Header";
 import { useMediaQuery } from "usehooks-ts";
 import Gallery from "./Gallery";
 import SectionOne from "./SectionInformation1";
+import Contact from "./Contact";
 
 const LandingPage = () => {
   const smView = useMediaQuery("(min-width: 900px)", {
@@ -20,7 +21,6 @@ const LandingPage = () => {
         display: "flex",
         flexDirection: "column",
         position: "relative",
-        height: "47000vh",
       }}
     >
       <Header />
@@ -31,11 +31,12 @@ const LandingPage = () => {
         }}
       >
         {xsView && <NavBarCompound.ButtonProducts />}
-        {!smView && <NavBarCompound.ButtonOpenMenu />}
+
         {smView && <NavBarCompound.ButtonAbout />}
       </NavBarCompound>
       <Gallery />
       <SectionOne />
+      <Contact />
     </div>
   );
 };

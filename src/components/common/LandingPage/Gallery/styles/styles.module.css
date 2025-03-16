@@ -6,7 +6,14 @@
     grid-template-columns: repeat(2, minmax(min(100%, 17rem), 1fr));
     gap: 5px;
 }
-
+.wraperGallery {
+    height: fit-content;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 @media (max-width: 1200px) {
     .gallery {
         grid-template-columns: 1fr; /* Cambiado a 1 columna para móviles */
@@ -27,7 +34,7 @@
 
 @media (min-width: 1174px) {
     .gallery {
-        grid-template-columns: repeat(4, minmax(min(100%, 17rem), 1fr)); /* Manteniendo 4 columnas para pantallas grandes */
+        grid-template-columns: repeat(2, minmax(min(100%, 17rem), 1fr)); /* Manteniendo 4 columnas para pantallas grandes */
     }
 }
 
