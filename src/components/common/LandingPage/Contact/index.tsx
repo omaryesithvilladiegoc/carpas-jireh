@@ -196,9 +196,8 @@ const Contact = () => {
             </div>
           )}
         </form>
+        <SocialMedia />
       </section>
-
-      <SocialMedia />
     </div>
   );
 };
