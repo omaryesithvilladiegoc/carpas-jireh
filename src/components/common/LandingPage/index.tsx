@@ -7,11 +7,7 @@ import SectionOne from "./SectionInformation1";
 import Contact from "./Contact";
 
 const LandingPage = () => {
-  const smView = useMediaQuery("(min-width: 900px)", {
-    initializeWithValue: false,
-  });
-
-  const xsView = useMediaQuery("(min-width: 500px)", {
+  const xsView = useMediaQuery("(min-width: 600px)", {
     initializeWithValue: false,
   });
 
@@ -30,9 +26,10 @@ const LandingPage = () => {
           ButtonAbout: "Sobre Nosotros",
         }}
       >
-        {xsView && <NavBarCompound.ButtonProducts />}
+        {!xsView && <NavBarCompound.ButtonProducts showLabel={false} />}
+        {xsView && <NavBarCompound.ButtonProducts showLabel />}
 
-        {smView && <NavBarCompound.ButtonAbout />}
+        <NavBarCompound.ButtonAbout />
       </NavBarCompound>
       <Gallery />
       <SectionOne />

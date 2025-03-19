@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Tent } from "../../types";
 import styles from "../../styles/styles.module.css";
 import { motion } from "motion/react";
+import SocialMedia from "@/components/common/LandingPage/Contact/childrens/SocialMedia";
 
 export default function TentCard({ tent }: { tent: Tent }) {
   return (
@@ -39,7 +40,10 @@ export default function TentCard({ tent }: { tent: Tent }) {
             layout="responsive"
           />
         </div>
-        <button>Adquirir ahora</button>
+        <section className={styles.contentSocialMedia}>
+          {" "}
+          <SocialMedia />
+        </section>
       </div>
     </motion.div>
   );

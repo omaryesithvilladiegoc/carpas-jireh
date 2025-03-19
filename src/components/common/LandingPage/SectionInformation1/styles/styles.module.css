@@ -14,9 +14,7 @@
     background-attachment: fixed;
     position: relative;
 }
-.conentSection {
-   
-}
+
 
 .backgroundFilter {
     background-color: rgba(21, 30, 22, 0.63); 
@@ -74,7 +72,7 @@
 .backgroundFilter p {
     font-size: 1.5rem;
     max-width: 800px;
-    line-height: 1.6;
+    line-height: 1;
     text-align: center;
 }
 

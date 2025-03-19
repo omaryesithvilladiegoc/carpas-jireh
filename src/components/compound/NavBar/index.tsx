@@ -11,12 +11,13 @@ import styles from "./styles/navbar.module.css";
 import { RiHome2Fill } from "react-icons/ri";
 import { useState } from "react";
 import Link from "next/link";
+import { dmSans } from "@/fonts/index.fonts";
 
 const NavBarCompound = ({ children, content }: INavBarProps) => {
   const [isOpen] = useState<boolean>(false);
   return (
     <NavBarContext.Provider value={{ content, isOpen }}>
-      <div className={styles.navBar}>
+      <div className={`${dmSans.className} ${styles.navBar}`}>
         <div className={styles.contentLogo}>
           <Image
             src={"/assets/logo-main.png"}
@@ -35,14 +36,18 @@ const NavBarCompound = ({ children, content }: INavBarProps) => {
   );
 };
 
-NavBarCompound.ButtonProducts = function ButtonProducts() {
+NavBarCompound.ButtonProducts = function ButtonProducts({
+  showLabel,
+}: {
+  showLabel?: boolean;
+}) {
   const context = useNavBarContext();
   const { ButtonProducts } = context.content;
   return (
     <Link href={"/tents"}>
       {" "}
       <li>
-        {ButtonProducts}{" "}
+        {showLabel && ButtonProducts}{" "}
         <span>
           <GiBarracksTent />
         </span>

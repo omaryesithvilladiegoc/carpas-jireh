@@ -1,14 +1,22 @@
 .contactContainer {
   margin: 0 auto;
-  padding: 2rem;
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
+@media (max-width:800px) {
+  .contactContainer {
+    flex-direction: column;
+  }
+}
+
+
+
 .formText {
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
 }
 
@@ -23,8 +31,9 @@
 }
 
 .containerForm {
-  width: 30%;
+  width: 50%;
   margin: 0 auto;
+
 }
 
 .form {
@@ -51,6 +60,7 @@
   border-bottom: 1px solid black;
   font-size: 1rem;
   transition: border-color 0.3s ease;
+  background-color: transparent;
 }
 
 .formGroup input:focus,

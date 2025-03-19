@@ -12,23 +12,23 @@ import {
   FaPhone,
   FaWhatsapp,
 } from "react-icons/fa";
-import { lato } from "@/fonts/index.fonts";
+import { dmSans, dmSerif } from "@/fonts/index.fonts";
 
 const Header = () => {
   const images = [
     ["/assets/carpa1.png", "Bodas y Celebraciones"],
-    ["/assets/carpa2.jpeg", "Bodas y Celebraciones"],
-    ["/assets/carpa3.jpeg", "Bodas y Celebraciones"],
-    ["/assets/carpa4.jpeg", "Bodas y Celebraciones"],
-    ["/assets/carpa5.jpeg", "Bodas y Celebraciones"],
-    ["/assets/carpa6.jpeg", "Bodas y Celebraciones"],
+    ["/assets/carpa2.jpeg", "Eventos Deportivos"],
+    ["/assets/carpa3.jpeg", "Almacenamiento y Logística"],
+    ["/assets/carpa4.jpeg", "Camping y Aventuras"],
+    ["/assets/carpa5.jpeg", "Dormitorios Temporales"],
+    ["/assets/carpa6.jpeg", "Zonas de Comida y Restaurantes"],
     ["/assets/carpa7.jpeg", "Ferias y Exposiciones"],
-    ["/assets/carpa8.jpeg", "Construcción e Industria"],
+    ["/assets/carpa8.jpeg", "Espectáculos y Conciertos"],
     ["/assets/carpa9.jpeg", "Eventos Corporativos"],
-    ["/assets/carpa10.jpeg", "Bodas y Celebraciones"],
-    ["/assets/carpa11.jpeg", "Bodas y Celebraciones"],
-    ["/assets/carpa12.jpeg", "Bodas y Celebraciones"],
-    ["/assets/carpa13.jpeg", "Bodas y Celebraciones"],
+    ["/assets/carpa10.jpeg", "Mercados y Tianguis"],
+    ["/assets/carpa11.jpeg", "Construcción e Industria"],
+    ["/assets/carpa12.jpeg", "Fiestas Privadas"],
+    ["/assets/carpa13.jpeg", "Emergencias y Refugios"],
   ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -55,10 +55,7 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <section
-        className={`${styles.headerImage} ${lato.className}`}
-        onTouchMove={handleMove}
-      >
+      <section className={`${styles.headerImage}`} onTouchMove={handleMove}>
         <motion.div
           key={currentImageIndex}
           style={{ position: "relative", width: "100%", height: "100%" }}
@@ -76,15 +73,17 @@ const Header = () => {
                   priority={false}
                 />
 
-                <p>Carpas Para todo tipo de evento </p>
+                <p className={dmSerif.className}>
+                  Carpas Para todo tipo de evento{" "}
+                </p>
               </div>
             </div>
             <div className={styles.contentText}>
               {" "}
-              <motion.h2 {...sliderStyles}>
+              <motion.h2 className={dmSerif.className} {...sliderStyles}>
                 {images[currentImageIndex][1]}
               </motion.h2>
-              <motion.p {...sliderStyles}>
+              <motion.p className={dmSans.className} {...sliderStyles}>
                 Contamos con más de 15 años de experiencia
               </motion.p>
               <motion.button
@@ -93,7 +92,7 @@ const Header = () => {
                 onMouseEnter={handleHoverButton}
               >
                 <FaWhatsapp className={styles.wpIcon} />
-                <span className={styles.backgroundButton}>
+                <span className={`${styles.backgroundButton}`}>
                   {" "}
                   Solicita una cotización
                 </span>

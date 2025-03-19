@@ -1,6 +1,8 @@
 import { useState, FormEvent } from "react";
 import styles from "./styles/styles.module.css";
 import Swal from "sweetalert2";
+import { dmSansLight, dmSerif } from "@/fonts/index.fonts";
+import SocialMedia from "./childrens/SocialMedia";
 
 type TentType =
   | "carpas dos aguas"
@@ -86,7 +88,7 @@ const Contact = () => {
     <div className={styles.contactContainer}>
       <section className={styles.formText}>
         <div className={styles.contentTextForm}>
-          <h4>
+          <h4 className={dmSerif.className}>
             ¡Déjanos tus datos y descubre la carpa perfecta para tu evento!
             <span>
               {" "}
@@ -97,7 +99,10 @@ const Contact = () => {
         </div>
       </section>
       <section className={styles.containerForm}>
-        <form onSubmit={handleSubmit} className={styles.form}>
+        <form
+          onSubmit={handleSubmit}
+          className={`${styles.form} ${dmSansLight.className}`}
+        >
           <div className={styles.formGroup}>
             <label htmlFor="name">Nombre:</label>
             <input
@@ -192,6 +197,8 @@ const Contact = () => {
           )}
         </form>
       </section>
+
+      <SocialMedia />
     </div>
   );
 };

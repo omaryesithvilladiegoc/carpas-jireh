@@ -1,14 +1,19 @@
-import { Lato } from "next/font/google";
-import { Roboto } from "next/font/google";
+import { DM_Serif_Text, DM_Sans } from "next/font/google";
 
-export const lato = Lato({
-  variable: "--font-lato",
-  subsets: ["latin"],
+export const dmSerif = DM_Serif_Text({
+  variable: "--DM-serif-text",
   weight: "400",
+  subsets: ["latin"],
 });
 
-export const roboto = Roboto({
-  variable: "--font-roboto",
+export const dmSans = DM_Sans({
+  variable: "--dm-sans",
+  weight: "800",
   subsets: ["latin"],
-  weight: "400",
+});
+
+export const dmSansLight = DM_Sans({
+  variable: "--dm-sans",
+  weight: "200",
+  subsets: ["latin"],
 });

@@ -1,6 +1,5 @@
 
 
-/* Grid Tecnology */
 .tentGrid {
     width: 100%;
     position: absolute;
@@ -14,7 +13,15 @@
     
 }
 
-/* Card Tecnology */
+@media (max-width:800px) {
+    .tentGrid {
+        gap: 5rem;
+    }
+
+
+}
+
+
 
 .tentCard {
     display: flex;
@@ -188,4 +195,13 @@ scale: 1.1;
 
 .contentGrid {
     height: 100vh;
+}
+
+.contentSocialMedia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    font-size: 20px;
 }
