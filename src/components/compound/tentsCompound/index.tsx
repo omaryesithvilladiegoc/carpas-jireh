@@ -108,13 +108,13 @@ FilterableTents.TentsGrid = function TentsGrid({}) {
           elementClassNames={styles.tentGrid}
         >
           {filteredTents.map((tent) => (
-            <a
+            <div
               key={tent.id}
               data-src={tent.imgUrl}
               className={styles.galleryItem}
             >
               <TentCard tent={tent} />
-            </a>
+            </div>
           ))}
         </LightGallery>
       ) : (
